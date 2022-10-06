@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct User: Codable {
-    let results: [Result]
+struct Response: Codable {
+    let results: [User]
     let info: Info
 }
 
@@ -16,7 +16,7 @@ struct Info: Codable {
     let page: Int
 }
 
-struct Result: Codable {
+struct User: Codable {
     let gender: String
     let name: Name
     let location: Location
@@ -48,5 +48,5 @@ struct Name: Codable {
 }
 
 struct Picture: Codable {
-    let large, medium, thumbnail: URL
+    let large, medium, thumbnail: String
 }

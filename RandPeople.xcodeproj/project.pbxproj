@@ -22,6 +22,10 @@
 		A4AD751028EF10FC00879F38 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750F28EF10FC00879F38 /* NetworkManager.swift */; };
 		A4AD751228EF12CB00879F38 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751128EF12CB00879F38 /* UserModel.swift */; };
 		A4AD751428EF176700879F38 /* RandomUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751328EF176700879F38 /* RandomUserAPI.swift */; };
+		A4AD751728EF1FFD00879F38 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */; };
+		A4AD751928EF204700879F38 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751828EF204700879F38 /* MainViewModel.swift */; };
+		A4AD751B28EF20A000879F38 /* MainIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751A28EF20A000879F38 /* MainIO.swift */; };
+		A4AD751D28EF55F500879F38 /* ErrorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751C28EF55F500879F38 /* ErrorRouter.swift */; };
 		E60954007F65FC802D09CA21 /* Pods_RandPeople.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C30DCDFE9EFE106382A34C /* Pods_RandPeople.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,10 @@
 		A4AD750F28EF10FC00879F38 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A4AD751128EF12CB00879F38 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A4AD751328EF176700879F38 /* RandomUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPI.swift; sourceTree = "<group>"; };
+		A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
+		A4AD751828EF204700879F38 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A4AD751A28EF20A000879F38 /* MainIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIO.swift; sourceTree = "<group>"; };
+		A4AD751C28EF55F500879F38 /* ErrorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRouter.swift; sourceTree = "<group>"; };
 		AA3A68386D8421AA910671D2 /* Pods-RandPeople-RandPeopleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople-RandPeopleUITests.release.xcconfig"; path = "Target Support Files/Pods-RandPeople-RandPeopleUITests/Pods-RandPeople-RandPeopleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C46C0C2CE5633D3A922848FF /* Pods-RandPeopleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeopleTests.debug.xcconfig"; path = "Target Support Files/Pods-RandPeopleTests/Pods-RandPeopleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2FC870FFD87DEB9195F95F /* Pods-RandPeople.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople.debug.xcconfig"; path = "Target Support Files/Pods-RandPeople/Pods-RandPeople.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 		A4AD74E728EEE6A600879F38 /* RandPeopleTests */ = {
 			isa = PBXGroup;
 			children = (
+				A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */,
 				A4AD74E828EEE6A600879F38 /* RandPeopleTests.swift */,
 			);
 			path = RandPeopleTests;
@@ -206,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				A4AD750528EF010E00879F38 /* ViewModel.swift */,
+				A4AD751C28EF55F500879F38 /* ErrorRouter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -231,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				A4AD74D528EEE6A500879F38 /* ViewController.swift */,
+				A4AD751828EF204700879F38 /* MainViewModel.swift */,
+				A4AD751A28EF20A000879F38 /* MainIO.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -495,10 +507,13 @@
 				A4AD751428EF176700879F38 /* RandomUserAPI.swift in Sources */,
 				A4AD74D228EEE6A500879F38 /* AppDelegate.swift in Sources */,
 				A4AD750828EF028E00879F38 /* MainFlow.swift in Sources */,
+				A4AD751928EF204700879F38 /* MainViewModel.swift in Sources */,
 				A4AD751028EF10FC00879F38 /* NetworkManager.swift in Sources */,
+				A4AD751D28EF55F500879F38 /* ErrorRouter.swift in Sources */,
 				A4AD750628EF010E00879F38 /* ViewModel.swift in Sources */,
 				A4AD751228EF12CB00879F38 /* UserModel.swift in Sources */,
 				A4AD74D428EEE6A500879F38 /* SceneDelegate.swift in Sources */,
+				A4AD751B28EF20A000879F38 /* MainIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4AD74E928EEE6A600879F38 /* RandPeopleTests.swift in Sources */,
+				A4AD751728EF1FFD00879F38 /* MainViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

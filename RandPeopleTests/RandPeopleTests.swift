@@ -25,7 +25,8 @@ final class NetworkManagerTest: QuickSpec {
         }
         
         describe("Network manager") {
-            it("page in call we made and servers page have to be the same") {
+            
+            it("page in call we made and server response page has to be the same") {
                 
                 [1,2,3,4,10].forEach { page in
                     expect(
@@ -38,6 +39,12 @@ final class NetworkManagerTest: QuickSpec {
                     .to(equal(page))
                 }
                 
+            }
+            
+            it("network manager returns right amount of users") {
+                expect(network.getRandomUsers(page: 1).compactMap { $0.results.count })
+                    .first
+                    .to(equal(10))
             }
         }
     }

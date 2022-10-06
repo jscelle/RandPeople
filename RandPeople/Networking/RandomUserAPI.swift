@@ -28,7 +28,10 @@ extension RandomUserAPI {
             path: "/api",
             method: .get,
             task: .requestParameters(
-                parameters: ["page" : page],
+                parameters: [
+                    "page" : page,
+                    "results": 10
+                ],
                 encoding: URLEncoding.queryString
             )
         )
