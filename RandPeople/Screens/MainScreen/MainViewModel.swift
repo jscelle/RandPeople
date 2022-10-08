@@ -13,13 +13,13 @@ import RxRelay
 
 final class MainViewModel: ViewModel, Stepper {
         
-    private let networkManager: NetworkManagerType
+    private let networkManager: NetworkManager
     
     private var inProgress = false
     
     var steps = PublishRelay<Step>()
         
-    init(networkManager: NetworkManagerType = NetworkManager()) {
+    init(networkManager: NetworkManager = UserNetworkManager()) {
         self.networkManager = networkManager
     }
     
@@ -32,13 +32,13 @@ final class MainViewModel: ViewModel, Stepper {
             .flatMap { [networkManager] page in
                 Observable.zip(
                     Observable.just(page),
-                    networkManager.getRandomUsers(page: page)
+                    networkManager.getUsers(page: page)
                         .rerouteError(errorRouter)
                 )
             }
         
         let pages = response
-            .map { ($0.0, $0.1.results ) }
+            .map { ($0.0, $0.1.results) }
             .scan(into: [Int: [User]]()) { current, next in
                 current[next.0] = next.1
             }
@@ -58,8 +58,8 @@ final class MainViewModel: ViewModel, Stepper {
     }
     
     private func getUsers(page: Int) -> Single<[User]> {
-        return networkManager
-            .getRandomUsers(page: page)
+        networkManager
+            .getUsers(page: page)
             .compactMap { $0.results }
             .asSingle()
     }

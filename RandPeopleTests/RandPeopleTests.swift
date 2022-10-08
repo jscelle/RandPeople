@@ -18,10 +18,10 @@ final class NetworkManagerTest: QuickSpec {
     override func spec() {
         super.spec()
         
-        var network: NetworkManager!
+        var network: UserNetworkManager!
         
         beforeEach {
-            network = NetworkManager()
+            network = UserNetworkManager()
         }
         
         describe("Network manager") {
@@ -30,7 +30,7 @@ final class NetworkManagerTest: QuickSpec {
                 
                 [1,2,3,4,10].forEach { page in
                     expect(
-                        network.getRandomUsers(page: page)
+                        network.getUsers(page: page)
                             .compactMap {
                                 $0.info.page
                             }
@@ -42,7 +42,7 @@ final class NetworkManagerTest: QuickSpec {
             }
             
             it("network manager returns right amount of users") {
-                expect(network.getRandomUsers(page: 1).compactMap { $0.results.count })
+                expect(network.getUsers(page: 1).compactMap { $0.results.count })
                     .first
                     .to(equal(10))
             }

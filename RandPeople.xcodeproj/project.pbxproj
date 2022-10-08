@@ -19,13 +19,18 @@
 		A4AD750628EF010E00879F38 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750528EF010E00879F38 /* ViewModel.swift */; };
 		A4AD750828EF028E00879F38 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750728EF028E00879F38 /* MainFlow.swift */; };
 		A4AD750B28EF031400879F38 /* MainStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750A28EF031400879F38 /* MainStep.swift */; };
-		A4AD751028EF10FC00879F38 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750F28EF10FC00879F38 /* NetworkManager.swift */; };
-		A4AD751228EF12CB00879F38 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751128EF12CB00879F38 /* UserModel.swift */; };
+		A4AD751028EF10FC00879F38 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD750F28EF10FC00879F38 /* UserNetworkManager.swift */; };
+		A4AD751228EF12CB00879F38 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751128EF12CB00879F38 /* ResponseModel.swift */; };
 		A4AD751428EF176700879F38 /* RandomUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751328EF176700879F38 /* RandomUserAPI.swift */; };
 		A4AD751728EF1FFD00879F38 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */; };
 		A4AD751928EF204700879F38 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751828EF204700879F38 /* MainViewModel.swift */; };
 		A4AD751B28EF20A000879F38 /* MainIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751A28EF20A000879F38 /* MainIO.swift */; };
 		A4AD751D28EF55F500879F38 /* ErrorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD751C28EF55F500879F38 /* ErrorRouter.swift */; };
+		A4AD752128F0057600879F38 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD752028F0057600879F38 /* RealmManager.swift */; };
+		A4AD752328F0240300879F38 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD752228F0240300879F38 /* Repository.swift */; };
+		A4AD752728F028D700879F38 /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD752628F028D700879F38 /* RepositoryTest.swift */; };
+		A4AD752928F04C0500879F38 /* DomainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD752828F04C0500879F38 /* DomainUser.swift */; };
+		A4AD752E28F0565C00879F38 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD752D28F0565C00879F38 /* ReachabilityManager.swift */; };
 		E60954007F65FC802D09CA21 /* Pods_RandPeople.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C30DCDFE9EFE106382A34C /* Pods_RandPeople.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,13 +72,18 @@
 		A4AD750528EF010E00879F38 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4AD750728EF028E00879F38 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		A4AD750A28EF031400879F38 /* MainStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStep.swift; sourceTree = "<group>"; };
-		A4AD750F28EF10FC00879F38 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		A4AD751128EF12CB00879F38 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A4AD750F28EF10FC00879F38 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
+		A4AD751128EF12CB00879F38 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		A4AD751328EF176700879F38 /* RandomUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPI.swift; sourceTree = "<group>"; };
 		A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
 		A4AD751828EF204700879F38 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A4AD751A28EF20A000879F38 /* MainIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIO.swift; sourceTree = "<group>"; };
 		A4AD751C28EF55F500879F38 /* ErrorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRouter.swift; sourceTree = "<group>"; };
+		A4AD752028F0057600879F38 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A4AD752228F0240300879F38 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A4AD752628F028D700879F38 /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
+		A4AD752828F04C0500879F38 /* DomainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainUser.swift; sourceTree = "<group>"; };
+		A4AD752D28F0565C00879F38 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		AA3A68386D8421AA910671D2 /* Pods-RandPeople-RandPeopleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople-RandPeopleUITests.release.xcconfig"; path = "Target Support Files/Pods-RandPeople-RandPeopleUITests/Pods-RandPeople-RandPeopleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C46C0C2CE5633D3A922848FF /* Pods-RandPeopleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeopleTests.debug.xcconfig"; path = "Target Support Files/Pods-RandPeopleTests/Pods-RandPeopleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2FC870FFD87DEB9195F95F /* Pods-RandPeople.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople.debug.xcconfig"; path = "Target Support Files/Pods-RandPeople/Pods-RandPeople.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,11 +165,12 @@
 		A4AD74D028EEE6A500879F38 /* RandPeople */ = {
 			isa = PBXGroup;
 			children = (
-				A4AD750C28EF077300879F38 /* Models */,
+				A4AD752F28F069ED00879F38 /* Extensions */,
+				A4AD752A28F04E4900879F38 /* Utils */,
+				A4AD751E28F0054B00879F38 /* Data */,
 				A4AD750928EF030500879F38 /* Navigation */,
 				A4AD750428EF007200879F38 /* Common */,
 				A4AD750328EF006200879F38 /* Screens */,
-				A4AD750228EF005100879F38 /* Networking */,
 				A4AD750128EF004A00879F38 /* Application */,
 			);
 			path = RandPeople;
@@ -168,6 +179,7 @@
 		A4AD74E728EEE6A600879F38 /* RandPeopleTests */ = {
 			isa = PBXGroup;
 			children = (
+				A4AD752628F028D700879F38 /* RepositoryTest.swift */,
 				A4AD751628EF1FFD00879F38 /* MainViewModelTest.swift */,
 				A4AD74E828EEE6A600879F38 /* RandPeopleTests.swift */,
 			);
@@ -197,7 +209,8 @@
 		A4AD750228EF005100879F38 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A4AD750F28EF10FC00879F38 /* NetworkManager.swift */,
+				A4AD752D28F0565C00879F38 /* ReachabilityManager.swift */,
+				A4AD750F28EF10FC00879F38 /* UserNetworkManager.swift */,
 				A4AD751328EF176700879F38 /* RandomUserAPI.swift */,
 			);
 			path = Networking;
@@ -232,7 +245,8 @@
 		A4AD750C28EF077300879F38 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A4AD751128EF12CB00879F38 /* UserModel.swift */,
+				A4AD751128EF12CB00879F38 /* ResponseModel.swift */,
+				A4AD752828F04C0500879F38 /* DomainUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +259,39 @@
 				A4AD751A28EF20A000879F38 /* MainIO.swift */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		A4AD751E28F0054B00879F38 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A4AD750228EF005100879F38 /* Networking */,
+				A4AD751F28F0056400879F38 /* Managers */,
+				A4AD750C28EF077300879F38 /* Models */,
+				A4AD752228F0240300879F38 /* Repository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A4AD751F28F0056400879F38 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A4AD752028F0057600879F38 /* RealmManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A4AD752A28F04E4900879F38 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A4AD752F28F069ED00879F38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,12 +555,16 @@
 				A4AD74D228EEE6A500879F38 /* AppDelegate.swift in Sources */,
 				A4AD750828EF028E00879F38 /* MainFlow.swift in Sources */,
 				A4AD751928EF204700879F38 /* MainViewModel.swift in Sources */,
-				A4AD751028EF10FC00879F38 /* NetworkManager.swift in Sources */,
+				A4AD752E28F0565C00879F38 /* ReachabilityManager.swift in Sources */,
+				A4AD751028EF10FC00879F38 /* UserNetworkManager.swift in Sources */,
+				A4AD752328F0240300879F38 /* Repository.swift in Sources */,
+				A4AD752128F0057600879F38 /* RealmManager.swift in Sources */,
 				A4AD751D28EF55F500879F38 /* ErrorRouter.swift in Sources */,
 				A4AD750628EF010E00879F38 /* ViewModel.swift in Sources */,
-				A4AD751228EF12CB00879F38 /* UserModel.swift in Sources */,
+				A4AD751228EF12CB00879F38 /* ResponseModel.swift in Sources */,
 				A4AD74D428EEE6A500879F38 /* SceneDelegate.swift in Sources */,
 				A4AD751B28EF20A000879F38 /* MainIO.swift in Sources */,
+				A4AD752928F04C0500879F38 /* DomainUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +574,7 @@
 			files = (
 				A4AD74E928EEE6A600879F38 /* RandPeopleTests.swift in Sources */,
 				A4AD751728EF1FFD00879F38 /* MainViewModelTest.swift in Sources */,
+				A4AD752728F028D700879F38 /* RepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

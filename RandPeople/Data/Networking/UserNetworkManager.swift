@@ -10,14 +10,16 @@ import Moya
 import RxSwift
 import RxCocoa
 
-protocol NetworkManagerType {
-    func getRandomUsers(page: Int) -> Observable<Response>
+
+protocol NetworkManager {
+    func getUsers(page: Int) -> Observable<Response>
 }
 
-final class NetworkManager: NetworkManagerType {
+final class UserNetworkManager: NetworkManager {
+    
     private let provider = MoyaProvider<RandomUserAPI>()
     
-    func getRandomUsers(page: Int) -> Observable<Response> {
+    func getUsers(page: Int) -> Observable<Response> {
         provider
             .rx
             .request(

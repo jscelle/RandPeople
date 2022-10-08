@@ -11,8 +11,9 @@ target 'RandPeople' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
-  pod 'RxFlow'	
-
+  pod 'RxFlow'
+  pod 'RxKingfisher'
+  pod "RxRealm"	
 
   target 'RandPeopleTests' do
     inherit! :search_paths
@@ -20,7 +21,6 @@ target 'RandPeople' do
     pod 'RxNimble', subspecs: ['RxBlocking', 'RxTest']
     pod 'Quick'
     pod 'Nimble'
-
   end
 
   target 'RandPeopleUITests' do
