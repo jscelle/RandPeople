@@ -7,18 +7,34 @@
 
 import Foundation
 import RxSwift
+import RealmSwift
 
 protocol DatabaseManager {
-    func getUsers(page: Int) -> Observable<[DomainUser]>
-    func saveUsers(users: [User]) -> Observable<Bool>
+    func getUsers() -> Observable<[DomainUser]>
+    func saveUsers(users: [DomainUser])
 }
 
-//class RealmManager: UserDatabaseManagerType {
-//    func getUsers(page: Int) -> Observable<[User]> {
-//        
-//    }
-//    
-//    func saveUsers(users: [User]) -> Observable<Bool> {
-//        
-//    }
-//}
+class RealmManager: DatabaseManager {
+    
+    let realm: Realm
+    
+    init() {
+        self.realm = try! Realm()
+    }
+    
+    func getUsers() -> Observable<[DomainUser]> {
+        let response = realm
+            .objects(RealmDomainModel.self)
+            .toDomain()
+        
+        return Observable.just(response)
+    }
+    
+    func saveUsers(users: [DomainUser]) {
+        users
+            .toRealm()
+            .forEach { user in
+                realm.add(user)
+        }
+    }
+}

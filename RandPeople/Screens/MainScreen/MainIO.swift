@@ -11,10 +11,10 @@ import RxCocoa
 import RxRelay
 
 struct MainInput {
-    var page = PublishRelay<Int>()
+    var trigger: Observable<Void>
 }
 
 struct MainOutput {
-    var items: Driver<[User]>
-    let error: Driver<Error>
+    var items: Driver<[DomainUser]>
+    let error: Driver<String>
 }

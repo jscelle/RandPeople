@@ -20,7 +20,6 @@ final class MainFlow: Flow {
         }
         
         switch step {
-            
             case .mainScreen:
                 return .none
             case .personOverview:

@@ -8,51 +8,38 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Moya
 
 protocol Repository {
-    func getUsers() -> Observable<[DomainUser]>
-    func storeUsers(users: [DomainUser])
+    func getUsers(page: Int) -> Observable<[DomainUser]>
 }
-#warning("make page for each data source (by scan probably), make block then data executes")
 final class UserRepository: Repository {
     
-    private let reachability: Reachability
     private let dbManager: DatabaseManager
     private let networkManager: NetworkManager
     
-    private let initialPage = 1
-    
     init(
         dbManager: DatabaseManager,
-        networkManager: NetworkManager,
-        reachability: Reachability
+        networkManager: NetworkManager
     ) {
         self.dbManager = dbManager
         self.networkManager = networkManager
-        self.reachability = reachability
     }
     
-    func getUsers() -> Observable<[DomainUser]> {
-        let reach = reachability
-            .reach
-            .skip(0)
-        
-        let observables = Observable.zip(
-            reach,
-            networkManager.getUsers(page: 1),
-            dbManager.getUsers(page: 1)
-        )
-        .map {
-            if $0.0 {
-                return DomainUser.convert(from: $0.1.results)
-            }
-            return $0.2
+    func getUsers(page: Int) -> Observable<[DomainUser]> {
+        // 6 is probably error code for the internet connection lost
+        networkManager
+            .getUsers(page: page)
+            .do(onNext: { [dbManager] users in
+                dbManager.saveUsers(users: users)
+            })
+            .catch { [dbManager] error in
+                
+                if (error as NSError).code == 6 {
+                    return dbManager.getUsers()
+                }
+                
+                return .error(error)
         }
-        
-        return observables
-    }
-    
-    func storeUsers(users: [DomainUser]) {
-        
     }
 }

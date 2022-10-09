@@ -13,55 +13,50 @@ import RxRelay
 
 final class MainViewModel: ViewModel, Stepper {
         
-    private let networkManager: NetworkManager
+    private let repository: Repository
     
     private var inProgress = false
     
     var steps = PublishRelay<Step>()
         
-    init(networkManager: NetworkManager = UserNetworkManager()) {
-        self.networkManager = networkManager
+    init(repository: Repository = UserRepository(
+        dbManager: RealmManager(),
+        networkManager: UserNetworkManager()
+        )
+    ) {
+        self.repository = repository
     }
     
     func transform(input: MainInput) -> MainOutput {
         
         let errorRouter = ErrorRouter()
-        
-        let response = input
-            .page
-            .flatMap { [networkManager] page in
-                Observable.zip(
-                    Observable.just(page),
-                    networkManager.getUsers(page: page)
-                        .rerouteError(errorRouter)
-                )
+                
+        let page = input
+            .trigger
+            .scan(0) { value, _ in
+                value + 1
             }
         
-        let pages = response
-            .map { ($0.0, $0.1.results) }
-            .scan(into: [Int: [User]]()) { current, next in
-                current[next.0] = next.1
+        let response = page
+            .flatMap { [repository] page in
+                repository.getUsers(page: page)
+                    .rerouteError(errorRouter)
             }
         
-        let users = pages
-            .map { pages in
-                pages.sorted {
-                    $0.key < $1.key
-                }
-                .flatMap { $0.value }
+        let users = response
+            .scan(into: [DomainUser]()) { current, next in
+                current.append(contentsOf: next)
             }
+            .map { $0.unique }
         
         return MainOutput(
-            items: users.asDriver(onErrorDriveWith: .empty()),
-            error: errorRouter.error.asDriver(onErrorDriveWith: .empty())
+            items: users
+                .asDriver(onErrorRecover: { _ in fatalError() }),
+            error: errorRouter
+                .error
+                .compactMap { $0.localizedDescription }
+                .asDriver(onErrorRecover: { _ in fatalError() })
         )
-    }
-    
-    private func getUsers(page: Int) -> Single<[User]> {
-        networkManager
-            .getUsers(page: page)
-            .compactMap { $0.results }
-            .asSingle()
     }
     
     func navigate(to step: MainStep) {

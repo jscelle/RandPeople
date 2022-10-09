@@ -16,12 +16,12 @@ import RxTest
 @testable import RandPeople
 
 final class MainViewModelTest: QuickSpec {
-
+    
     override func spec() {
         super.spec()
         
         var viewModel: MainViewModel!
-        var input = MainInput()
+        var input: MainInput!
         var output: MainOutput!
         
         var disposeBag: DisposeBag!
@@ -32,35 +32,50 @@ final class MainViewModelTest: QuickSpec {
             disposeBag = DisposeBag()
             scheduler = TestScheduler(initialClock: 0)
             
-            viewModel = MainViewModel(networkManager: MockNetworkManager())
+            viewModel = MainViewModel(repository: MockRepository())
+            
+            let trigger = scheduler.createHotObservable([
+                .next(100, ()),
+                .next(200, ()),
+                .next(300, ()),
+                .next(400, ())
+            ])
+            .asObservable()
+            
+            input = MainInput(trigger: trigger)
             
             output = viewModel.transform(input: input)
-            
-            scheduler.createHotObservable([
-                .next(100, 1),
-                .next(1000, 2)
-            ])
-            .bind(to: input.page)
-            .disposed(by: disposeBag)
-            
         }
         
         describe("Main view model") {
             
-            context("has to populate users array") {
+            it("should increase by page size ever time page changes (1 in mock example) and also not contains only unique elements") {
                 
-                it("it should increase by page size ever time page changes") {
-                    
-                    expect(output.items.compactMap { $0.count })
-                        .events(scheduler: scheduler, disposeBag: disposeBag)
-                        .to(
-                            equal([
-                                Recorded.next(100, 1),
-                                Recorded.next(1000, 2)
-                            ])
+                expect(output.items.compactMap { $0.count })
+                    .events(scheduler: scheduler, disposeBag: disposeBag)
+                    .to(
+                        equal([
+                            Recorded.next(100, 1),
+                            Recorded.next(200, 2),
+                            Recorded.next(300, 2)
+                        ])
                     )
-                }
             }
+        }
+    }
+}
+
+final class MockRepository: Repository {
+    func getUsers(page: Int) -> Observable<[DomainUser]> {
+        switch page {
+        case 1:
+            return Observable.of(MockUsers.networkUser)
+        case 2:
+            return Observable.of(MockUsers.dataBaseUser)
+        case 3:
+            return Observable.of(MockUsers.networkUser)
+        default:
+            return .error(MockErrors.err)
         }
     }
 }

@@ -1,11 +1,7 @@
 //
-//  ErrorRouter.swift
-//  RandPeople
+// Created by Daniel Tartgaglia on 19 Dec 2020.
+// Copytright © 2022 Daniel Tartaglia. MIT License.
 //
-//  Created by Artem Raykh on 06.10.2022.
-//
-
-import Foundation
 
 import Foundation
 import RxSwift
