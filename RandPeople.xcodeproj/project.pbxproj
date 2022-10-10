@@ -11,7 +11,7 @@
 		2F0C71B8F7DC2B21F1911275 /* Pods_RandPeopleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABFE9F7E72903C32A133607 /* Pods_RandPeopleTests.framework */; };
 		A4AD74D228EEE6A500879F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74D128EEE6A500879F38 /* AppDelegate.swift */; };
 		A4AD74D428EEE6A500879F38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74D328EEE6A500879F38 /* SceneDelegate.swift */; };
-		A4AD74D628EEE6A500879F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74D528EEE6A500879F38 /* ViewController.swift */; };
+		A4AD74D628EEE6A500879F38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74D528EEE6A500879F38 /* MainViewController.swift */; };
 		A4AD74DB28EEE6A600879F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AD74DA28EEE6A600879F38 /* Assets.xcassets */; };
 		A4AD74E928EEE6A600879F38 /* RandPeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74E828EEE6A600879F38 /* RandPeopleTests.swift */; };
 		A4AD74F328EEE6A600879F38 /* RandPeopleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD74F228EEE6A600879F38 /* RandPeopleUITests.swift */; };
@@ -36,6 +36,8 @@
 		A4AD753928F2D2FC00879F38 /* RealmArray+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD753828F2D2FC00879F38 /* RealmArray+Convert.swift */; };
 		A4AD753B28F2DA0D00879F38 /* domainUserSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD753A28F2DA0D00879F38 /* domainUserSetTest.swift */; };
 		A4AD753D28F2DA6B00879F38 /* Array+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD753C28F2DA6B00879F38 /* Array+Unique.swift */; };
+		A4AD754028F31D1C00879F38 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD753F28F31D1C00879F38 /* UserCollectionViewCell.swift */; };
+		A4AD754228F3265C00879F38 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD754128F3265C00879F38 /* UserCollectionView.swift */; };
 		E60954007F65FC802D09CA21 /* Pods_RandPeople.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C30DCDFE9EFE106382A34C /* Pods_RandPeople.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +68,7 @@
 		A4AD74CE28EEE6A500879F38 /* RandPeople.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandPeople.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AD74D128EEE6A500879F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4AD74D328EEE6A500879F38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4AD74D528EEE6A500879F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4AD74D528EEE6A500879F38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4AD74DA28EEE6A600879F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4AD74DF28EEE6A600879F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4AD74E428EEE6A600879F38 /* RandPeopleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandPeopleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,8 @@
 		A4AD753828F2D2FC00879F38 /* RealmArray+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmArray+Convert.swift"; sourceTree = "<group>"; };
 		A4AD753A28F2DA0D00879F38 /* domainUserSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domainUserSetTest.swift; sourceTree = "<group>"; };
 		A4AD753C28F2DA6B00879F38 /* Array+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Unique.swift"; sourceTree = "<group>"; };
+		A4AD753F28F31D1C00879F38 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4AD754128F3265C00879F38 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
 		AA3A68386D8421AA910671D2 /* Pods-RandPeople-RandPeopleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople-RandPeopleUITests.release.xcconfig"; path = "Target Support Files/Pods-RandPeople-RandPeopleUITests/Pods-RandPeople-RandPeopleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C46C0C2CE5633D3A922848FF /* Pods-RandPeopleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeopleTests.debug.xcconfig"; path = "Target Support Files/Pods-RandPeopleTests/Pods-RandPeopleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2FC870FFD87DEB9195F95F /* Pods-RandPeople.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople.debug.xcconfig"; path = "Target Support Files/Pods-RandPeople/Pods-RandPeople.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,7 +269,7 @@
 		A4AD751528EF1CCD00879F38 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A4AD74D528EEE6A500879F38 /* ViewController.swift */,
+				A4AD753E28F31D0C00879F38 /* Views */,
 				A4AD751828EF204700879F38 /* MainViewModel.swift */,
 				A4AD751A28EF20A000879F38 /* MainIO.swift */,
 			);
@@ -307,6 +311,16 @@
 				A4AD753C28F2DA6B00879F38 /* Array+Unique.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4AD753E28F31D0C00879F38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4AD74D528EEE6A500879F38 /* MainViewController.swift */,
+				A4AD753F28F31D1C00879F38 /* UserCollectionViewCell.swift */,
+				A4AD754128F3265C00879F38 /* UserCollectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,9 +580,10 @@
 			files = (
 				A4AD750B28EF031400879F38 /* MainStep.swift in Sources */,
 				A4AD753D28F2DA6B00879F38 /* Array+Unique.swift in Sources */,
-				A4AD74D628EEE6A500879F38 /* ViewController.swift in Sources */,
+				A4AD74D628EEE6A500879F38 /* MainViewController.swift in Sources */,
 				A4AD751428EF176700879F38 /* RandomUserAPI.swift in Sources */,
 				A4AD753328F1978E00879F38 /* RealmDomainModel.swift in Sources */,
+				A4AD754228F3265C00879F38 /* UserCollectionView.swift in Sources */,
 				A4AD74D228EEE6A500879F38 /* AppDelegate.swift in Sources */,
 				A4AD753528F2D26300879F38 /* NetworkArray+Convert.swift in Sources */,
 				A4AD750828EF028E00879F38 /* MainFlow.swift in Sources */,
@@ -576,6 +591,7 @@
 				A4AD751028EF10FC00879F38 /* UserNetworkManager.swift in Sources */,
 				A4AD752328F0240300879F38 /* Repository.swift in Sources */,
 				A4AD752128F0057600879F38 /* RealmManager.swift in Sources */,
+				A4AD754028F31D1C00879F38 /* UserCollectionViewCell.swift in Sources */,
 				A4AD751D28EF55F500879F38 /* ErrorRouter.swift in Sources */,
 				A4AD750628EF010E00879F38 /* ViewModel.swift in Sources */,
 				A4AD753728F2D2ED00879F38 /* DomainArray+Convert.swift in Sources */,

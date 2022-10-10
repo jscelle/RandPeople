@@ -8,12 +8,11 @@ target 'RandPeople' do
   # Pods for RandPeople
   pod 'SnapKit'
   pod 'Moya/RxSwift'
+  pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'SnapKit'
   pod 'RxFlow'
-  pod 'RxKingfisher'
-  pod "RxRealm"	
+  pod 'RealmSwift'
 
   target 'RandPeopleTests' do
     inherit! :search_paths

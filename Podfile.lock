@@ -1,8 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
-  - Kingfisher (5.15.8):
-    - Kingfisher/Core (= 5.15.8)
-  - Kingfisher/Core (5.15.8)
+  - Kingfisher (7.3.2)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (15.0.0):
@@ -23,10 +21,6 @@ PODS:
   - RxFlow (2.13.0):
     - RxCocoa (>= 6.0.0)
     - RxSwift (>= 6.0.0)
-  - RxKingfisher (2.1.0):
-    - Kingfisher (~> 5)
-    - RxCocoa (~> 6)
-    - RxSwift (~> 6)
   - RxNimble/Core (6.0.0):
     - Nimble (~> 10.0)
     - RxSwift (~> 6.0)
@@ -36,11 +30,6 @@ PODS:
   - RxNimble/RxTest (6.0.0):
     - RxNimble/Core
     - RxTest
-  - RxRealm (5.0.4):
-    - Realm (~> 10.21)
-    - RealmSwift (~> 10.21)
-    - RxCocoa (~> 6.1)
-    - RxSwift (~> 6.1)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -49,15 +38,15 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - Kingfisher
   - Moya/RxSwift
   - Nimble
   - Quick
+  - RealmSwift
   - RxCocoa
   - RxFlow
-  - RxKingfisher
   - RxNimble/RxBlocking
   - RxNimble/RxTest
-  - RxRealm
   - RxSwift
   - SnapKit
 
@@ -73,9 +62,7 @@ SPEC REPOS:
     - RxBlocking
     - RxCocoa
     - RxFlow
-    - RxKingfisher
     - RxNimble
-    - RxRealm
     - RxRelay
     - RxSwift
     - RxTest
@@ -83,7 +70,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
@@ -92,14 +79,12 @@ SPEC CHECKSUMS:
   RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxFlow: 52f6f6379918392c1ea8cb62d8dcf2df9a5463dd
-  RxKingfisher: a602fbf8751d756a7cc6190ddfedc2ce0d301377
   RxNimble: 04caf11bd7e8f7669d68ef69b8fdfe41552c1ef2
-  RxRealm: 666c8785327fe2fff972a3093b35dc7055c1ca38
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: f802d26b50ba43ebbf9065b41ed11ab55c0a375d
+PODFILE CHECKSUM: 63fde07d1f0577f7dcd22d9167805646a568445a
 
 COCOAPODS: 1.11.3

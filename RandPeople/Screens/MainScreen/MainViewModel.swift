@@ -38,14 +38,16 @@ final class MainViewModel: ViewModel, Stepper {
             }
         
         let response = page
-            .flatMap { [repository] page in
+            .flatMapFirst { [repository] page in
                 repository.getUsers(page: page)
                     .rerouteError(errorRouter)
             }
         
         let users = response
             .scan(into: [DomainUser]()) { current, next in
-                current.append(contentsOf: next)
+                if next.count != 0 {
+                    return current.append(contentsOf: next)
+                }
             }
             .map { $0.unique }
         

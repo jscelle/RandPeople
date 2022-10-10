@@ -27,6 +27,8 @@ final class MainViewModelTest: QuickSpec {
         var disposeBag: DisposeBag!
         var scheduler: TestScheduler!
         
+        var trigger: Observable<Void>!
+        
         beforeEach {
             
             disposeBag = DisposeBag()
@@ -34,11 +36,10 @@ final class MainViewModelTest: QuickSpec {
             
             viewModel = MainViewModel(repository: MockRepository())
             
-            let trigger = scheduler.createHotObservable([
+            trigger = scheduler.createHotObservable([
                 .next(100, ()),
                 .next(200, ()),
-                .next(300, ()),
-                .next(400, ())
+                .next(300, ())
             ])
             .asObservable()
             

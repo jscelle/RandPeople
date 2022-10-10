@@ -11,7 +11,11 @@ import UIKit
 
 final class MainFlow: Flow {
     
-    var root: Presentable = UINavigationController()
+    var root: Presentable {
+        return self.rootNavigationController
+    }
+    
+    private var rootNavigationController = UINavigationController()
     
     func navigate(to step: Step) -> FlowContributors {
         
@@ -21,9 +25,24 @@ final class MainFlow: Flow {
         
         switch step {
             case .mainScreen:
-                return .none
+                return mainScreen()
             case .personOverview:
                 return .none
         }
+    }
+    
+    private func mainScreen() -> FlowContributors {
+        let viewModel = MainViewModel()
+        let viewController = MainViewController(viewModel: viewModel)
+        
+        rootNavigationController.pushViewController(viewController, animated: false)
+        rootNavigationController.isNavigationBarHidden = true
+        
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: viewController,
+                withNextStepper: viewModel
+            )
+        )
     }
 }

@@ -31,10 +31,19 @@ class RealmManager: DatabaseManager {
     }
     
     func saveUsers(users: [DomainUser]) {
-        users
-            .toRealm()
-            .forEach { user in
-                realm.add(user)
+        
+        try! realm.write {
+            
+            users
+                .toRealm()
+                .forEach { user in
+                    if realm.object(
+                        ofType: RealmDomainModel.self,
+                        forPrimaryKey: user.email
+                    ) == nil {
+                        realm.add(user)
+                }
+            }
         }
     }
 }
