@@ -26,9 +26,7 @@ final class MainFlow: Flow {
         switch step {
             case .mainScreen:
                 return mainScreen()
-            case .personOverview(let user):
-                return personOverview(user: user)
-            case .showImage(let _):
+            case .personOverview:
                 return .none
         }
     }
@@ -39,27 +37,6 @@ final class MainFlow: Flow {
         
         rootNavigationController.pushViewController(viewController, animated: false)
         rootNavigationController.isNavigationBarHidden = true
-        
-        return .one(
-            flowContributor: .contribute(
-                withNextPresentable: viewController,
-                withNextStepper: viewModel
-            )
-        )
-    }
-    
-    private func personOverview(user: DomainUser) -> FlowContributors {
-        let viewModel = OverviewViewModel()
-        let viewController = OverviewViewController(
-            user: user,
-            viewModel: viewModel
-        )
-        
-        rootNavigationController.isNavigationBarHidden = false
-        rootNavigationController.pushViewController(
-            viewController,
-            animated: true
-        )
         
         return .one(
             flowContributor: .contribute(

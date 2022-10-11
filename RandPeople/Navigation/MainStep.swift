@@ -10,6 +10,5 @@ import RxFlow
 
 enum MainStep: Step {
     case mainScreen
-    case personOverview(user: DomainUser)
-    case showImage(image: URL)
+    case personOverview
 }

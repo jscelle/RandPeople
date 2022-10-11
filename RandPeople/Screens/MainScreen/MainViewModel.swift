@@ -61,7 +61,7 @@ final class MainViewModel: ViewModel, Stepper {
         )
     }
     
-    func showOverview(user: DomainUser) {
-        steps.accept(MainStep.personOverview(user: user))
+    func navigate(to step: MainStep) {
+        steps.accept(step)
     }
 }

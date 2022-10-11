@@ -14,14 +14,7 @@ struct DomainUser {
     let yearCount: Int
     let dob: Date
     let time: String
-    
-    let image: Image
-    
-    struct Image {
-        let thumbnail: URL
-        let medium: URL
-        let large: URL
-    }
+    let imageUrl: URL
 }
 
 extension DomainUser: Hashable {
@@ -31,27 +24,5 @@ extension DomainUser: Hashable {
     
     static func == (lhs: DomainUser, rhs: DomainUser) -> Bool {
         return lhs.email == rhs.email
-    }
-}
-
-extension Array where Element == DomainUser {
-    func toRealm() -> [RealmDomainModel] {
-        compactMap { user in
-            let model = RealmDomainModel()
-            
-            model.name = user.name
-            model.email = user.email
-            model.gender = user.gender
-            model.yearCount = user.yearCount
-            model.dob = user.dob
-            model.time = user.time
-            
-            model.image = RealmImageModel()
-            model.image?.thumbnail = user.image.thumbnail.absoluteString
-            model.image?.medium = user.image.medium.absoluteString
-            model.image?.large = user.image.large.absoluteString
-            
-            return model
-        }
     }
 }
