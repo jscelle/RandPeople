@@ -9,7 +9,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private let viewModel: MainViewModel
@@ -66,10 +66,12 @@ class MainViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
         
-        collectionView.backgroundColor = UIColor(
-            red: 15/255,
-            green: 0,
-            blue: 21/255,
+        collectionView.backgroundColor = .clear
+        
+        view.backgroundColor = UIColor(
+            red: 20/255,
+            green: 10/255,
+            blue: 20/255,
             alpha: 1
         )
         
@@ -79,8 +81,9 @@ class MainViewController: UIViewController {
             .flatMap { [collectionView] offset in
                 collectionView.isNearBottom(offset: offset)
             }
+            .distinctUntilChanged()
             .filter { $0 }
-            .flatMap { _ in Observable.of(()) }
+            .map { _ in () }
         
         let input = MainInput(trigger: trigger)
         
@@ -100,5 +103,13 @@ class MainViewController: UIViewController {
             ) { row, data, cell in
                 cell.configureCell(with: data)
             }.disposed(by: disposeBag)
+        
+        collectionView
+            .rx
+            .modelSelected(DomainUser.self)
+            .bind { [viewModel] user in
+                viewModel.showOverview(user: user)
+            }
+            .disposed(by: disposeBag)
     }
 }

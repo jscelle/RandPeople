@@ -50,3 +50,36 @@ struct Name: Codable {
 struct Picture: Codable {
     let large, medium, thumbnail: String
 }
+
+extension Array where Element == User {
+    func toDomain() -> [DomainUser] {
+        compactMap { user in
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            
+            guard
+                let thumbnailURL = URL(string: user.picture.thumbnail),
+                let mediumURL = URL(string: user.picture.medium),
+                let largeURL = URL(string: user.picture.large),
+                let date = dateFormatter.date(from: user.dob.date)
+            else {
+                return nil
+            }
+            
+            return DomainUser(
+                name: "\(user.name.first) \(user.name.last)",
+                email: user.email,
+                gender: user.gender,
+                yearCount: user.dob.age,
+                dob: date,
+                time: user.location.timezone.timezoneDescription,
+                image: DomainUser.Image(
+                    thumbnail: thumbnailURL,
+                    medium: mediumURL,
+                    large: largeURL
+                )
+            )
+        }
+    }
+}

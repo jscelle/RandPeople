@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class UserCollectionView: UICollectionView {
+final class UserCollectionView: UICollectionView {
     func isNearBottom(offset: CGPoint) -> Single<Bool> {
         
         let startOffset: CGFloat = 30
