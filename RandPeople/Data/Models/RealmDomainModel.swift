@@ -14,7 +14,7 @@ final class RealmDomainModel: Object {
     @Persisted var gender: String
     @Persisted var yearCount: Int
     @Persisted var dob: Date
-    @Persisted var time: String
+    @Persisted var offset: String
     
     @Persisted var image: RealmImageModel?
 }
@@ -45,7 +45,7 @@ extension Results where Element == RealmDomainModel {
                 gender: user.gender,
                 yearCount: user.yearCount,
                 dob: user.dob,
-                time: user.time,
+                offset: user.offset,
                 image: DomainUser.Image(
                     thumbnail: thumbnail,
                     medium: medium,

@@ -13,7 +13,7 @@ struct DomainUser {
     let gender: String
     let yearCount: Int
     let dob: Date
-    let time: String
+    let offset: String
     
     let image: Image
     
@@ -44,7 +44,7 @@ extension Array where Element == DomainUser {
             model.gender = user.gender
             model.yearCount = user.yearCount
             model.dob = user.dob
-            model.time = user.time
+            model.offset = user.offset
             
             model.image = RealmImageModel()
             model.image?.thumbnail = user.image.thumbnail.absoluteString

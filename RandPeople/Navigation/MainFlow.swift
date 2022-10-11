@@ -38,7 +38,6 @@ final class MainFlow: Flow {
         let viewController = MainViewController(viewModel: viewModel)
         
         rootNavigationController.pushViewController(viewController, animated: false)
-        rootNavigationController.isNavigationBarHidden = true
         
         return .one(
             flowContributor: .contribute(
@@ -55,7 +54,6 @@ final class MainFlow: Flow {
             viewModel: viewModel
         )
         
-        rootNavigationController.isNavigationBarHidden = false
         rootNavigationController.pushViewController(
             viewController,
             animated: true

@@ -108,13 +108,19 @@ final class OverviewView: UIView {
     }
     
     private func configureView(user: DomainUser) {
+        
+        guard let currentTime = Date.localtime(actualOffset: user.offset) else {
+            return
+        }
+        
         userImageView.kf.setImage(with: user.image.large)
         nameLabel.text = user.name
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd LLLL yyyy"
-        dateLabel.text = "\(formatter.string(from: user.dob)), \(user.yearCount)"
+        
+        dateLabel.text = "\(user.dob.formatted(format: "dd LLLL yyyy")), \(user.yearCount)"
+        
         emailLabel.text = user.email
         genderIcon.tintColor = user.gender == "female" ? .systemPink : .blue
-        timeLabel.text = user.time
+        
+        timeLabel.text = "Time: \(currentTime.formatted(format: "dd LLLL, HH:mm"))"
     }
 }

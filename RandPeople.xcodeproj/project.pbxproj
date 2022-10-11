@@ -40,7 +40,7 @@
 		A4AD754F28F5616D00879F38 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD754E28F5616D00879F38 /* OverviewViewModel.swift */; };
 		A4AD755228F564D800879F38 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD755128F564D800879F38 /* OverviewView.swift */; };
 		A4AD755428F5B60500879F38 /* UILabel + Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD755328F5B60500879F38 /* UILabel + Fabric.swift */; };
-		A4AD755628F5C61B00879F38 /* Date+Local time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD755528F5C61B00879F38 /* Date+Local time.swift */; };
+		A4AD755628F5C61B00879F38 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AD755528F5C61B00879F38 /* Date.swift */; };
 		E60954007F65FC802D09CA21 /* Pods_RandPeople.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C30DCDFE9EFE106382A34C /* Pods_RandPeople.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +103,7 @@
 		A4AD754E28F5616D00879F38 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		A4AD755128F564D800879F38 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		A4AD755328F5B60500879F38 /* UILabel + Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Fabric.swift"; sourceTree = "<group>"; };
-		A4AD755528F5C61B00879F38 /* Date+Local time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Local time.swift"; sourceTree = "<group>"; };
+		A4AD755528F5C61B00879F38 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AA3A68386D8421AA910671D2 /* Pods-RandPeople-RandPeopleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople-RandPeopleUITests.release.xcconfig"; path = "Target Support Files/Pods-RandPeople-RandPeopleUITests/Pods-RandPeople-RandPeopleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C46C0C2CE5633D3A922848FF /* Pods-RandPeopleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeopleTests.debug.xcconfig"; path = "Target Support Files/Pods-RandPeopleTests/Pods-RandPeopleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2FC870FFD87DEB9195F95F /* Pods-RandPeople.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandPeople.debug.xcconfig"; path = "Target Support Files/Pods-RandPeople/Pods-RandPeople.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			children = (
 				A4AD753C28F2DA6B00879F38 /* Array+Unique.swift */,
 				A4AD755328F5B60500879F38 /* UILabel + Fabric.swift */,
-				A4AD755528F5C61B00879F38 /* Date+Local time.swift */,
+				A4AD755528F5C61B00879F38 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,7 +611,7 @@
 				A4AD753328F1978E00879F38 /* RealmDomainModel.swift in Sources */,
 				A4AD754228F3265C00879F38 /* UserCollectionView.swift in Sources */,
 				A4AD74D228EEE6A500879F38 /* AppDelegate.swift in Sources */,
-				A4AD755628F5C61B00879F38 /* Date+Local time.swift in Sources */,
+				A4AD755628F5C61B00879F38 /* Date.swift in Sources */,
 				A4AD750828EF028E00879F38 /* MainFlow.swift in Sources */,
 				A4AD751928EF204700879F38 /* MainViewModel.swift in Sources */,
 				A4AD751028EF10FC00879F38 /* UserNetworkManager.swift in Sources */,

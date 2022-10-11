@@ -29,8 +29,17 @@ final class OverviewViewController: UIViewController  {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    private func setupViews() {
         view.backgroundColor = UIColor(
             red: 20/255,
             green: 10/255,
