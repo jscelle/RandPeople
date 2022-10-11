@@ -13,7 +13,7 @@ import Moya
 protocol Repository {
     func getUsers(page: Int) -> Observable<[DomainUser]>
 }
-#warning("make complete on db response return")
+
 final class UserRepository: Repository {
     
     private let dbManager: DatabaseManager
