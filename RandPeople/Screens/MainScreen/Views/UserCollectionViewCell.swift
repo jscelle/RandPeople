@@ -13,14 +13,7 @@ final class UserCollectionViewCell: UICollectionViewCell {
     
     static let indetifier = "UserCollectionViewCell"
     
-    private var userImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    private var userImageView = UIImageView.defaultImageView()
     
     private var nameLabel = UILabel.defaultLabel()
     

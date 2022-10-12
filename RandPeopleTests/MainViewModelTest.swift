@@ -29,10 +29,12 @@ final class MainViewModelTest: QuickSpec {
         
         var trigger: Observable<Void>!
         
+        
+        
         beforeEach {
             
             disposeBag = DisposeBag()
-            scheduler = TestScheduler(initialClock: 0)
+            scheduler = TestScheduler(initialClock: 0, simulateProcessingDelay: true)
             
             viewModel = MainViewModel(repository: MockRepository())
             
@@ -46,6 +48,7 @@ final class MainViewModelTest: QuickSpec {
             input = MainInput(trigger: trigger)
             
             output = viewModel.transform(input: input)
+            
         }
         
         describe("Main view model") {
@@ -61,6 +64,10 @@ final class MainViewModelTest: QuickSpec {
                             Recorded.next(300, 2)
                         ])
                     )
+            }
+            
+            it("should throw errors") {
+                
             }
         }
     }

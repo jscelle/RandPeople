@@ -15,7 +15,7 @@ final class OverviewViewModel: Stepper {
     
     var steps = PublishRelay<Step>()
     
-    func showImage(image: URL) {
-        steps.accept(MainStep.showImage(image: image))
+    func showImage(imageURL: URL) {
+        steps.accept(MainStep.showImage(image: imageURL))
     }
 }

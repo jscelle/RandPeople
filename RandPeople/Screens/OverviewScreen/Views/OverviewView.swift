@@ -8,14 +8,8 @@
 import SnapKit
 
 final class OverviewView: UIView {
-    lazy var userImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    
+    lazy var userImageView = UIImageView.defaultImageView()
     
     lazy var genderIcon: UIImageView = {
         let imageView = UIImageView()

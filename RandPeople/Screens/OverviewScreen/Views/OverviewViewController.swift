@@ -7,8 +7,13 @@
 
 import Foundation
 import SnapKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
 final class OverviewViewController: UIViewController  {
+    
+    private let disposeBag = DisposeBag()
     
     private lazy var overView = OverviewView(user: user)
     
@@ -40,12 +45,8 @@ final class OverviewViewController: UIViewController  {
     }
     
     private func setupViews() {
-        view.backgroundColor = UIColor(
-            red: 20/255,
-            green: 10/255,
-            blue: 20/255,
-            alpha: 1
-        )
+        view.backgroundColor = UIColor.background()
+        
         view.addSubview(overView)
         
         overView.snp.makeConstraints { make in
@@ -56,5 +57,26 @@ final class OverviewViewController: UIViewController  {
         }
         
         overView.setupViews()
+        
+        overView.userImageView.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer()
+        overView.userImageView.addGestureRecognizer(tapGesture)
+        
+        tapGesture
+            .rx
+            .event
+            .bind (onNext: { [weak self] recognizer in
+                
+                guard let self = self else {
+                    return
+                }
+                
+                print("tapped")
+                
+                self.viewModel.showImage(imageURL: self.user.image.large)
+            })
+            .disposed(by: disposeBag)
+            
     }
 }

@@ -97,8 +97,12 @@ struct MockUsers {
             gender: "dbUser",
             yearCount: 53,
             dob: Date(),
-            time: "dbUser",
-            imageUrl: URL(string: "https://soundcloud.com")!
+            offset: "+12:00",
+            image: DomainUser.Image(
+                thumbnail: URL(string: "https://soundcloud.com")!,
+                medium: URL(string: "https://soundcloud.com")!,
+                large: URL(string: "https://soundcloud.com")!
+            )
         )
     ]
     
@@ -109,8 +113,12 @@ struct MockUsers {
             gender: "networkUser",
             yearCount: 35,
             dob: Date(),
-            time: "networkUser",
-            imageUrl: URL(string: "https://soundcloud.com")!
+            offset: "-12:00",
+            image: DomainUser.Image(
+                thumbnail: URL(string: "https://soundcloud.com")!,
+                medium: URL(string: "https://soundcloud.com")!,
+                large: URL(string: "https://soundcloud.com")!
+            )
         )
     ]
 }

@@ -23,32 +23,7 @@ final class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var collectionView: UserCollectionView = {
-        
-        let collectionViewLayout = UICollectionViewFlowLayout()
-        
-        let cellWidht = (view.frame.size.width - 30) / 2
-        
-        let cellSize = CGSize(
-            width: cellWidht,
-            height: cellWidht * 1.3
-        )
-        
-        collectionViewLayout.itemSize = cellSize
-        
-        collectionViewLayout.scrollDirection = .vertical
-        
-        let collectionView = UserCollectionView(
-            frame: CGRect.zero,
-            collectionViewLayout: collectionViewLayout
-        )
-        
-        collectionView.register(
-            UserCollectionViewCell.self,
-            forCellWithReuseIdentifier: UserCollectionViewCell.indetifier
-        )
-        return collectionView
-    }()
+    lazy var collectionView = userCollectionView()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -73,12 +48,7 @@ final class MainViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
         
-        view.backgroundColor = UIColor(
-            red: 20/255,
-            green: 10/255,
-            blue: 20/255,
-            alpha: 1
-        )
+        view.backgroundColor = UIColor.background()
         
         let trigger = collectionView
             .rx
@@ -114,6 +84,13 @@ final class MainViewController: UIViewController {
             .modelSelected(DomainUser.self)
             .bind { [viewModel] user in
                 viewModel.showOverview(user: user)
+            }
+            .disposed(by: disposeBag)
+        
+        output
+            .error
+            .drive { [weak self] error in
+                self?.presentError(message: error)
             }
             .disposed(by: disposeBag)
     }

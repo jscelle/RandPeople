@@ -28,8 +28,8 @@ final class MainFlow: Flow {
                 return mainScreen()
             case .personOverview(let user):
                 return personOverview(user: user)
-            case .showImage(let _):
-                return .none
+            case .showImage(let imageURL):
+                return showImage(imageURL: imageURL)
         }
     }
     
@@ -65,5 +65,18 @@ final class MainFlow: Flow {
                 withNextStepper: viewModel
             )
         )
+    }
+    
+    private func showImage(imageURL: URL) -> FlowContributors {
+        let viewController = ImageViewController(imageURL: imageURL)
+        viewController.modalPresentationStyle = .popover
+        
+        guard let topViewController = rootNavigationController.topViewController else {
+            return .none
+        }
+        
+        topViewController.present(viewController, animated: true)
+        
+        return .end(forwardToParentFlowWithStep: MainStep.mainScreen)
     }
 }
